@@ -1,0 +1,577 @@
+/* =========================================
+   MOBILE.CSS — Full Mobile Optimization
+   Breakpoints: 480px (xs), 768px (sm), 900px (md)
+   ========================================= */
+
+/* ===== HAMBURGER MENU ===== */
+@media (max-width: 900px) {
+
+    /* Hide social pill on mobile */
+    .nav-pill.left-pill {
+        display: none;
+    }
+
+    /* Logo smaller on mobile */
+    .header-logo {
+        height: 52px;
+    }
+
+    .split-header.scrolled .header-logo {
+        height: 42px;
+    }
+
+    /* Hamburger button */
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--text-dark);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.85);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        z-index: 1002;
+        position: relative;
+        transition: var(--transition);
+    }
+
+    .mobile-menu-btn i {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Right pill becomes transparent/minimal on mobile */
+    .nav-pill.right-pill {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 0;
+    }
+
+    /* Full-screen slide-in mobile nav */
+    .nav-links {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 78%;
+        max-width: 320px;
+        height: 100vh;
+        background: #ffffff;
+        padding: 5.5rem 2rem 2.5rem;
+        transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 1000;
+        box-shadow: -8px 0 40px rgba(0, 0, 0, 0.18);
+        list-style: none;
+        gap: 0;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 0.5rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--text-dark) !important;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+        color: var(--secondary) !important;
+    }
+
+    /* Dark overlay behind open menu */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        z-index: 999;
+        backdrop-filter: blur(2px);
+    }
+
+    .nav-overlay.active {
+        display: block;
+    }
+}
+
+/* ===== HERO SECTION ===== */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 100svh;
+        min-height: 550px;
+    }
+
+    .hero-content {
+        margin-top: 6vh;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.7rem, 7vw, 2.6rem);
+        line-height: 1.25;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.98rem;
+        margin-bottom: 2rem;
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .btn-primary.pill-btn,
+    .pill-btn-outline {
+        font-size: 0.92rem;
+        padding: 0.75rem 1.6rem;
+        width: 100%;
+        max-width: 240px;
+    }
+}
+
+/* ===== STATS BAR ===== */
+@media (max-width: 768px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        padding: 2.5rem 1.2rem;
+        margin-top: 2rem;
+        border-radius: 12px;
+    }
+
+    .stat-item {
+        padding: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .stat-item:nth-child(odd) {
+        border-right: 1px solid #f0f0f0;
+    }
+
+    .stat-item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-item p {
+        font-size: 0.72rem;
+    }
+
+    /* Hide plane animation on mobile for perf */
+    .plane-float-wrapper {
+        display: none;
+    }
+}
+
+/* ===== SERVICES SECTION ===== */
+@media (max-width: 768px) {
+
+    .services {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .section-header p {
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .service-card {
+        padding: 1.6rem 1rem;
+        border-radius: 12px;
+    }
+
+    .service-card i {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+}
+
+/* ===== COUNTRY CARDS (STUDENT VISA) ===== */
+@media (max-width: 768px) {
+
+    .services-grid[style*="220px"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.8rem;
+    }
+
+    .country-card {
+        padding: 1.2rem 0.5rem;
+        border-radius: 14px;
+        gap: 0.6rem;
+    }
+
+    .flag-wrapper {
+        width: 44px;
+        height: 30px;
+    }
+
+    .country-card h3 {
+        font-size: 0.82rem;
+        font-weight: 700;
+    }
+
+    .explore-link {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid[style*="220px"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ===== EXPERTISE SECTION ===== */
+@media (max-width: 768px) {
+
+    .expertise-detailed {
+        padding: 4rem 0;
+    }
+
+    .expertise-row,
+    .expertise-row.reverse {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .expertise-text h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .expertise-text p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .expertise-full {
+        padding: 0 0.5rem;
+    }
+
+    .expertise-full h2 {
+        font-size: 1.6rem;
+        margin: 2.5rem 0 1rem;
+    }
+
+    .expertise-full p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+    .expertise-image {
+        width: 100%;
+        max-height: 220px;
+    }
+
+    .expertise-image img {
+        object-fit: cover;
+        height: 220px;
+        width: 100%;
+    }
+}
+
+/* ===== WHY US SECTION ===== */
+@media (max-width: 768px) {
+
+    .why-us {
+        padding: 4rem 0;
+    }
+
+    .why-us .container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .why-us-content h2 {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .why-list li {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .why-list h4 {
+        font-size: 0.98rem;
+    }
+
+    .why-list p {
+        font-size: 0.84rem;
+    }
+
+    .why-us-image {
+        display: none; /* Hide heavy image on mobile for perf */
+    }
+
+    .experience-card {
+        display: none;
+    }
+}
+
+/* ===== TESTIMONIALS ===== */
+@media (max-width: 768px) {
+
+    .testimonials {
+        padding: 4rem 0 !important;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem !important;
+    }
+
+    .testimonial-card p {
+        font-size: 0.88rem !important;
+    }
+
+    .testimonials .section-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== CTA SECTION ===== */
+@media (max-width: 768px) {
+
+    .cta {
+        padding: 4rem 0;
+    }
+
+    .cta h2 {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .cta p {
+        font-size: 0.95rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .cta-form {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cta-form input,
+    .cta-form select,
+    .cta-form button {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .btn-gold {
+        padding: 0.9rem 1.5rem;
+    }
+}
+
+/* ===== FOOTER ===== */
+@media (max-width: 768px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-contact {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand,
+    .footer-contact {
+        grid-column: auto;
+    }
+
+    .footer-bottom p {
+        font-size: 0.78rem;
+    }
+}
+
+/* ===== FLOATING CONTACT BUTTON ===== */
+@media (max-width: 768px) {
+
+    .floating-contact {
+        bottom: 18px;
+        right: 18px;
+    }
+
+    #contact-toggle {
+        width: 52px;
+        height: 52px;
+    }
+
+    .contact-options {
+        bottom: 68px;
+        min-width: 160px;
+    }
+
+    .contact-options a {
+        font-size: 0.88rem;
+    }
+}
+
+/* ===== GLOBAL MOBILE TYPOGRAPHY ===== */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    h3 {
+        font-size: clamp(1rem, 4.5vw, 1.4rem);
+    }
+
+    p {
+        font-size: 0.92rem;
+    }
+
+    header.split-header {
+        padding: 0.9rem 0;
+    }
+}
+
+/* ===== CONTACT / SERVICES PAGE SPECIFICS ===== */
+@media (max-width: 768px) {
+
+    /* Contact info cards */
+    .contact-info-grid,
+    .contact-form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+
+    /* Visa detail cards */
+    .visa-features,
+    .visa-process-steps {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Table overflow scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.82rem;
+    }
+}
+
+/* ===== PERFORMANCE: Reduce animations on mobile ===== */
+@media (max-width: 768px) {
+
+    /* Simplify transition curves for lower-end devices */
+    :root {
+        --transition: all 0.3s ease;
+    }
+
+    /* Disable heavy backdrop-filter on mobile */
+    .glass-card {
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .country-card {
+        backdrop-filter: none;
+        background: #ffffff;
+    }
+
+    /* Reduce reveal animation distance */
+    .reveal {
+        transform: translateY(15px);
+    }
+}
+
+/* ===== EXTRA SMALL PHONES (< 400px) ===== */
+@media (max-width: 400px) {
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 1.3rem 0.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        width: 90%;
+    }
+}
