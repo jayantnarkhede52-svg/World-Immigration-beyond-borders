@@ -3,6 +3,13 @@
    Breakpoints: 480px (xs), 768px (sm), 900px (md)
    ========================================= */
 
+/* ===== GLOBAL MOBILE FIXES ===== */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100%;
+}
+
 /* ===== HAMBURGER MENU ===== */
 @media (max-width: 900px) {
 
@@ -76,8 +83,9 @@
         margin: 0;
     }
 
+    .split-header .right-pill .nav-links.active,
     .nav-links.active {
-        right: 0;
+        right: 0 !important;
     }
 
     .nav-links li {
