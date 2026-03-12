@@ -53,9 +53,12 @@
     }
 
     /* Full-screen slide-in mobile nav */
+    .split-header .right-pill .nav-links,
     .nav-links {
         display: flex !important;
-        flex-direction: column;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
         position: fixed;
         top: 0;
         right: -100%;
@@ -70,6 +73,7 @@
         list-style: none;
         gap: 0;
         overflow-y: auto;
+        margin: 0;
     }
 
     .nav-links.active {
@@ -77,6 +81,7 @@
     }
 
     .nav-links li {
+        width: 100%;
         border-bottom: 1px solid #f0f0f0;
     }
 
