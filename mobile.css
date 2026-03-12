@@ -37,7 +37,8 @@
         transition: var(--transition);
     }
 
-    .mobile-menu-btn i {
+    .mobile-menu-btn i,
+    .mobile-menu-btn svg {
         width: 22px;
         height: 22px;
     }

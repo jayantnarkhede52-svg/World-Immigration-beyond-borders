@@ -23,8 +23,8 @@ function openMenu() {
     navLinks.classList.add('active');
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    const icon = mobileMenuBtn.querySelector('i');
-    icon.setAttribute('data-lucide', 'x');
+    const icon = mobileMenuBtn.querySelector('.lucide') || mobileMenuBtn.querySelector('i');
+    if (icon) icon.setAttribute('data-lucide', 'x');
     lucide.createIcons();
 }
 
@@ -32,8 +32,8 @@ function closeMenu() {
     navLinks.classList.remove('active');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
-    const icon = mobileMenuBtn.querySelector('i');
-    icon.setAttribute('data-lucide', 'menu');
+    const icon = mobileMenuBtn.querySelector('.lucide') || mobileMenuBtn.querySelector('i');
+    if (icon) icon.setAttribute('data-lucide', 'menu');
     lucide.createIcons();
 }
 
@@ -64,9 +64,9 @@ const contactOptions = document.querySelector('.contact-options');
 if (contactToggle) {
     contactToggle.addEventListener('click', () => {
         contactOptions.classList.toggle('active');
-        const icon = contactToggle.querySelector('i');
+        const icon = contactToggle.querySelector('.lucide') || contactToggle.querySelector('i');
         const isActive = contactOptions.classList.contains('active');
-        icon.setAttribute('data-lucide', isActive ? 'x' : 'message-square');
+        if (icon) icon.setAttribute('data-lucide', isActive ? 'x' : 'message-square');
         lucide.createIcons();
     });
 
@@ -74,8 +74,8 @@ if (contactToggle) {
     document.addEventListener('click', (e) => {
         if (!contactToggle.closest('.floating-contact').contains(e.target)) {
             contactOptions.classList.remove('active');
-            const icon = contactToggle.querySelector('i');
-            icon.setAttribute('data-lucide', 'message-square');
+            const icon = contactToggle.querySelector('.lucide') || contactToggle.querySelector('i');
+            if (icon) icon.setAttribute('data-lucide', 'message-square');
             lucide.createIcons();
         }
     });
