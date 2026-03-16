@@ -830,15 +830,34 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.social-links i {
-    cursor: pointer;
-    opacity: 0.6;
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-decoration: none;
     transition: var(--transition);
 }
 
-.social-links i:hover {
-    opacity: 1;
+.footer-contact a:hover {
     color: var(--secondary);
+}
+
+.footer-contact a i, 
+.footer-contact p i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--secondary);
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
 .footer-bottom {
