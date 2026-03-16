@@ -11,7 +11,7 @@
 }
 
 .visa-hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
     margin-bottom: 1.5rem;
     font-family: 'Poppins', sans-serif;
 }
@@ -277,8 +277,10 @@
         transform: translateY(-10px);
     }
 
-    .req-grid {
-        grid-template-columns: 1fr;
+    .package-grid,
+    .req-grid,
+    .visa-highlights {
+        grid-template-columns: 1fr !important;
     }
 
     .visa-info-block,
