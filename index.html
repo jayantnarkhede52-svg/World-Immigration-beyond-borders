@@ -21,12 +21,12 @@
 </head>
 
 <body>
-    <header class="split-header">
+                <header class="split-header">
         <nav class="container nav-split">
             <!-- Left: Logo -->
             <div class="logo">
                 <a href="index.html">
-                    <img loading="lazy" src="assets/logo.png" alt="World Immigration Beyond Borders Logo" class="header-logo">
+                    <img src="assets/WORLD IMMIGRATION BB logo.png" alt="World Immigration Beyond Borders Logo" class="header-logo">
                 </a>
             </div>
 
@@ -34,16 +34,16 @@
             <div class="nav-pill left-pill">
                 <a href="#"><i data-lucide="facebook"></i></a>
                 <a href="#"><i data-lucide="phone"></i></a>
-                <a href="https://www.instagram.com/worldimmigration?igsh=OWowNTk1dTZ3aGt0" target="_blank"><i data-lucide="instagram"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
             </div>
-
+            
             <!-- Right Pill: Navigation -->
             <div class="nav-pill right-pill">
                 <ul class="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#services">Work visas</a></li>
-                    <li><a href="index.html#about">Other services</a></li>
-                    <li><a href="index.html#contact">Contacts</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Work visas</a></li>
+                    <li><a href="other-services.html">Other services</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
                 </ul>
                 <div class="mobile-menu-btn">
                     <i data-lucide="menu"></i>
@@ -92,12 +92,156 @@
                 <p>Approval Rate</p>
             </div>
             <div class="stat-item reveal">
-                <h3>15k+</h3>
+                <h3>100k+</h3>
                 <p>Clients Served</p>
             </div>
             <div class="stat-item reveal">
                 <h3>10+</h3>
                 <p>Years Experience</p>
+            </div>
+        </section>
+        
+        <!-- AI Eligibility Checker Section -->
+        <section id="eligibility" class="eligibility-section reveal">
+            <div class="container">
+                <div class="eligibility-card glass-card-dark">
+                    <div class="eligibility-header">
+                        <h2>Check Your <span class="gold">Visa Eligibility</span></h2>
+                        <p>Our smart algorithm helps you find the best immigration pathway in 2 minutes.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="eligibility-progress"></div>
+                        </div>
+                    </div>
+                    
+                    <form id="eligibility-form" class="eligibility-form">
+                        <!-- Step 1: Destination -->
+                        <div class="step active" data-step="1">
+                            <h3>Where do you want to go?</h3>
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="destination" value="Schengen">
+                                    <div class="option-content">
+                                        <i data-lucide="globe"></i>
+                                        <span>Europe (Schengen)</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="destination" value="USA">
+                                    <div class="option-content">
+                                        <i data-lucide="map-pin"></i>
+                                        <span>USA</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="destination" value="UK">
+                                    <div class="option-content">
+                                        <i data-lucide="landmark"></i>
+                                        <span>United Kingdom</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="destination" value="Canada">
+                                    <div class="option-content">
+                                        <i data-lucide="flag"></i>
+                                        <span>Canada</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Purpose -->
+                        <div class="step" data-step="2">
+                            <h3>What is your purpose of travel?</h3>
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="purpose" value="Work">
+                                    <div class="option-content">
+                                        <i data-lucide="briefcase"></i>
+                                        <span>Work / Employment</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="purpose" value="Study">
+                                    <div class="option-content">
+                                        <i data-lucide="graduation-cap"></i>
+                                        <span>Study (Masters/UG)</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="purpose" value="Visit">
+                                    <div class="option-content">
+                                        <i data-lucide="palmtree"></i>
+                                        <span>Tourist / Visit</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="purpose" value="Other">
+                                    <div class="option-content">
+                                        <i data-lucide="plus"></i>
+                                        <span>Other / Residency</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Qualification -->
+                        <div class="step" data-step="3">
+                            <h3>What is your highest qualification?</h3>
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="qualification" value="Postgraduate">
+                                    <div class="option-content">
+                                        <i data-lucide="library"></i>
+                                        <span>Postgraduate</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="qualification" value="Graduate">
+                                    <div class="option-content">
+                                        <i data-lucide="book-open"></i>
+                                        <span>Graduate</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="qualification" value="Diploma">
+                                    <div class="option-content">
+                                        <i data-lucide="award"></i>
+                                        <span>Diploma / Technical</span>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="qualification" value="Undergrad">
+                                    <div class="option-content">
+                                        <i data-lucide="user"></i>
+                                        <span>Higher Secondary</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Loading & Result -->
+                        <div class="step" data-step="4" id="result-step">
+                            <div class="result-loading" id="result-loading">
+                                <div class="spinner"></div>
+                                <p>Analyzing your profile...</p>
+                            </div>
+                            <div class="result-content" id="result-content" style="display: none;">
+                                <i data-lucide="check-circle-2" class="success-icon"></i>
+                                <h3>Great News!</h3>
+                                <p id="result-message">You have a high eligibility for the Skilled Worker pathway. Our team can help you finalize your application.</p>
+                                <div class="result-actions">
+                                    <button type="button" class="btn-primary pill-btn" onclick="scrollToContact()">Get Expert Help</button>
+                                    <button type="button" class="btn-text" onclick="resetEligibility()">Check Another</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation" id="form-nav">
+                            <button type="button" id="prevBtn" class="pill-btn-outline" style="display:none;">Back</button>
+                            <button type="button" id="nextBtn" class="pill-btn">Next Step</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
 
@@ -491,6 +635,57 @@
             </div>
         </section>
 
+        <!-- Our Process Section -->
+        <section id="process" class="process-section reveal">
+            <div class="container">
+                <div class="section-header text-center" style="text-align: center; margin-bottom: 4rem;">
+                    <h2>Our <span class="gold">Smooth Process</span></h2>
+                    <p>Relocating across borders has never been easier with our expert 4-step framework.</p>
+                </div>
+                
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-steps">
+                        <div class="timeline-item reveal">
+                            <div class="timeline-number">01</div>
+                            <div class="timeline-icon"><i data-lucide="phone-call"></i></div>
+                            <div class="timeline-content">
+                                <h4>Consultation</h4>
+                                <p>Initial assessment of your profile and identifying the best immigration options.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item reveal">
+                            <div class="timeline-number">02</div>
+                            <div class="timeline-icon"><i data-lucide="file-search"></i></div>
+                            <div class="timeline-content">
+                                <h4>Expert Evaluation</h4>
+                                <p>Thorough review of your documents and strategic planning for application success.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item reveal">
+                            <div class="timeline-number">03</div>
+                            <div class="timeline-icon"><i data-lucide="file-check"></i></div>
+                            <div class="timeline-content">
+                                <h4>Documentation</h4>
+                                <p>Preparation and filing of your application with meticulous attention to detail.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item reveal">
+                            <div class="timeline-number">04</div>
+                            <div class="timeline-icon"><i data-lucide="party-popper"></i></div>
+                            <div class="timeline-content">
+                                <h4>Success</h4>
+                                <p>Visa approval and coordination for your relocation and global journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Testimonials Section -->
         <section class="testimonials reveal" >
             <div class="container">
@@ -566,18 +761,19 @@
             <div class="container">
                 <h2>Ready to Start Your Journey?</h2>
                 <p>Consult with our experts today and get your visa processed with ease.</p>
-                <form class="cta-form">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <select required>
+                <form class="cta-form" id="cta-lead-form">
+                    <input type="text" id="cta-name" placeholder="Full Name" required>
+                    <input type="email" id="cta-email" placeholder="Email Address" required>
+                    <select id="cta-destination" required>
                         <option value="" disabled selected>Select Destination</option>
-                        <option value="schengen">Schengen</option>
-                        <option value="usa">USA</option>
-                        <option value="uk">UK</option>
-                        <option value="canada">Canada</option>
-                        <option value="uae">UAE</option>
+                        <option value="Schengen">Schengen</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UAE">UAE</option>
                     </select>
                     <button type="submit" class="btn-gold">Get Consultation</button>
+                    <div id="cta-feedback" style="display:none; margin-top: 12px; padding: 12px 16px; border-radius: 8px; font-weight: 500;"></div>
                 </form>
             </div>
         </section>
@@ -587,8 +783,8 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="logo">
-                    <img loading="lazy" src="assets/logo.png" alt="world immigration beyond borders Logo"
-                        style="height: 40px; width: auto; margin-bottom: 1rem;">
+                    <img loading="lazy" src="assets/WORLD IMMIGRATION BB logo.png" alt="world immigration beyond borders Logo"
+                        style="height: 60px; width: auto; margin-bottom: 1rem; border-radius: 12px; background: linear-gradient(135deg, rgba(10,15,30,0.85), rgba(20,30,60,0.8)); padding: 5px 8px; border: 1px solid rgba(197,160,89,0.4); box-shadow: 0 4px 16px rgba(0,0,0,0.4);">
                 </div>
                 <p>Your trusted partner for global mobility and immigration excellence.</p>
             </div>
@@ -645,6 +841,61 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // === CTA Lead Form Submission ===
+        (function() {
+            const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                ? 'http://localhost:5000'
+                : window.location.origin;
+
+            const ctaForm = document.getElementById('cta-lead-form');
+            if (!ctaForm) return;
+
+            ctaForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = ctaForm.querySelector('button[type="submit"]');
+                const feedback = document.getElementById('cta-feedback');
+                const btnText = submitBtn.textContent;
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.disabled = true;
+
+                try {
+                    const res = await fetch(`${API_BASE}/api/leads`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: document.getElementById('cta-name').value.trim(),
+                            email: document.getElementById('cta-email').value.trim(),
+                            destination: document.getElementById('cta-destination').value,
+                            source: 'homepage-cta'
+                        })
+                    });
+                    const data = await res.json();
+
+                    if (data.success) {
+                        ctaForm.reset();
+                        feedback.style.display = 'block';
+                        feedback.style.background = 'rgba(34,197,94,0.15)';
+                        feedback.style.color = '#22c55e';
+                        feedback.textContent = '✅ ' + data.message;
+                    } else {
+                        feedback.style.display = 'block';
+                        feedback.style.background = 'rgba(239,68,68,0.15)';
+                        feedback.style.color = '#ef4444';
+                        feedback.textContent = '❌ ' + (data.error || 'Something went wrong');
+                    }
+                } catch (err) {
+                    feedback.style.display = 'block';
+                    feedback.style.background = 'rgba(239,68,68,0.15)';
+                    feedback.style.color = '#ef4444';
+                    feedback.textContent = '❌ Network error. Please try again.';
+                } finally {
+                    submitBtn.textContent = btnText;
+                    submitBtn.disabled = false;
+                    setTimeout(() => { feedback.style.display = 'none'; }, 6000);
+                }
+            });
+        })();
     </script>
 </body>
 

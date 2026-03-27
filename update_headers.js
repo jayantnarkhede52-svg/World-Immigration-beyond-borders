@@ -22,10 +22,10 @@ const newHeaderTemplate = (scrolled) => `    <header class="split-header${scroll
             <!-- Right Pill: Navigation -->
             <div class="nav-pill right-pill">
                 <ul class="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#services">Work visas</a></li>
-                    <li><a href="index.html#about">Other services</a></li>
-                    <li><a href="index.html#contact">Contacts</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Work visas</a></li>
+                    <li><a href="other-services.html">Other services</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
                 </ul>
                 <div class="mobile-menu-btn">
                     <i data-lucide="menu"></i>

@@ -158,3 +158,108 @@ if (ctaForm) {
         }, 3000);
     });
 }
+
+// ── AI Eligibility Checker Logic ──
+let currentStep = 1;
+const totalSteps = 4;
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+const steps = document.querySelectorAll('.step');
+const progressBar = document.getElementById('eligibility-progress');
+
+function showStep(n) {
+    steps.forEach(step => step.classList.remove('active'));
+    const targetStep = document.querySelector(`.step[data-step="${n}"]`);
+    if (targetStep) targetStep.classList.add('active');
+
+    // Update buttons
+    if (n === 1) {
+        prevBtn.style.display = 'none';
+    } else {
+        prevBtn.style.display = 'inline-block';
+    }
+
+    if (n === totalSteps) {
+        document.getElementById('form-nav').style.display = 'none';
+        runAIAnalysis();
+    } else {
+        document.getElementById('form-nav').style.display = 'flex';
+        nextBtn.textContent = (n === totalSteps - 1) ? 'See Result' : 'Next Step';
+    }
+
+    // Update progress bar
+    const progress = (n / totalSteps) * 100;
+    if (progressBar) progressBar.style.width = `${progress}%`;
+}
+
+function runAIAnalysis() {
+    const loading = document.getElementById('result-loading');
+    const content = document.getElementById('result-content');
+    const message = document.getElementById('result-message');
+    
+    // Get form data
+    const destination = document.querySelector('input[name="destination"]:checked')?.value || 'Destination';
+    const purpose = document.querySelector('input[name="purpose"]:checked')?.value || 'Goal';
+    const qualification = document.querySelector('input[name="qualification"]:checked')?.value || 'Qualification';
+
+    // Simulate analysis
+    setTimeout(() => {
+        if (loading) loading.style.display = 'none';
+        if (content) content.style.display = 'block';
+        
+        let reco = "";
+        if (purpose === 'Study') {
+            reco = `Excellent profile for ${destination} Student Visa! With your ${qualification} background, you are a strong candidate for premium university admissions.`;
+        } else if (purpose === 'Work') {
+            reco = `Great news! Your ${qualification} qualifications match high-demand sectors in ${destination}. We recommend the Skilled Worker pathway.`;
+        } else {
+            reco = `You have high eligibility for a ${destination} ${purpose} Visa. Our experts can help you prepare a watertight documentation set for first-time approval.`;
+        }
+        
+        if (message) message.textContent = reco;
+        lucide.createIcons();
+    }, 2000);
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        // Validate if option selected
+        const currentActiveStep = document.querySelector('.step.active');
+        const hasSelection = currentActiveStep.querySelector('input:checked');
+        
+        if (!hasSelection && currentStep < totalSteps) {
+            alert('Please select an option to continue.');
+            return;
+        }
+
+        if (currentStep < totalSteps) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+}
+
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+}
+
+function resetEligibility() {
+    currentStep = 1;
+    document.getElementById('eligibility-form').reset();
+    document.getElementById('result-loading').style.display = 'block';
+    document.getElementById('result-content').style.display = 'none';
+    showStep(1);
+}
+
+function scrollToContact() {
+    const contactSection = document.getElementById('contact-form') || document.querySelector('.contact-section') || document.querySelector('footer');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+

@@ -16,7 +16,18 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes
 const orderRoutes = require('./routes/orders');
+const inquiryRoutes = require('./routes/inquiries');
+const leadRoutes = require('./routes/leads');
+const adminRoutes = require('./routes/admin');
+
 app.use('/api/orders', orderRoutes);
+app.use('/api/inquiries', inquiryRoutes);
+app.use('/api/leads', leadRoutes);
+app.use('/api/admin', adminRoutes);
+
+// Serve admin panel
+const path = require('path');
+app.use('/admin', express.static(path.join(__dirname, '..', 'admin')));
 
 // Health check
 app.get('/api/health', (req, res) => {
