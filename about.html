@@ -79,6 +79,64 @@
         </section>
     </main>
 
+    
+    <!-- Mini Contact Form (Site-Wide) -->
+    <section class="mini-contact-section">
+        <div class="container">
+            <div class="mini-contact-wrapper">
+                <div class="mini-contact-header">
+                    <h2>Get <span class="gold">Free Consultation</span></h2>
+                    <p>Fill in your details and our immigration experts will reach out to you.</p>
+                </div>
+                <div class="mini-contact-card">
+                    <form id="mini-contact-form">
+                        <div class="mini-form-grid">
+                            <div class="mini-form-group">
+                                <label for="mini-name">Full Name *</label>
+                                <input type="text" id="mini-name" placeholder="Your full name" required>
+                            </div>
+                            <div class="mini-form-group">
+                                <label for="mini-phone">Phone Number *</label>
+                                <input type="tel" id="mini-phone" placeholder="+91 9876543210" required>
+                            </div>
+                            <div class="mini-form-group">
+                                <label for="mini-visa">Visa Interest *</label>
+                                <select id="mini-visa" required>
+                                    <option value="" disabled selected>Select visa type</option>
+                                    <option value="Schengen">Schengen Visa</option>
+                                    <option value="USA">USA Visa</option>
+                                    <option value="UK">UK Visa</option>
+                                    <option value="Canada">Canada Visa</option>
+                                    <option value="Australia">Australia Visa</option>
+                                    <option value="UAE">UAE Visa</option>
+                                    <option value="Japan">Japan Visa</option>
+                                    <option value="Student Visa">Student Visa</option>
+                                    <option value="Work Visa">Work Visa</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mini-form-group">
+                                <label for="mini-message">Message</label>
+                                <textarea id="mini-message" placeholder="Any specific requirements..." rows="2"></textarea>
+                            </div>
+                        </div>
+                        <div id="mini-form-feedback" class="mini-form-feedback"></div>
+                        <div class="mini-form-submit">
+                            <button type="submit" class="btn-mini-submit">
+                                <i data-lucide="send" style="width:16px;height:16px;"></i>
+                                Get Free Consultation
+                            </button>
+                            <div class="mini-form-trust">
+                                <i data-lucide="shield-check"></i>
+                                <span>Your data is secure & confidential</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -140,6 +198,7 @@
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
+    <script src="supabase-form.js"></script>
 </body>
 
 </html>
