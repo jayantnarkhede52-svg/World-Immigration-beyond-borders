@@ -45,11 +45,11 @@
 
     /* Logo smaller on mobile */
     .header-logo {
-        height: 52px;
+        height: 75px;
     }
 
     .split-header.scrolled .header-logo {
-        height: 42px;
+        height: 55px;
     }
 
     /* Hamburger button */
