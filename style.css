@@ -12,6 +12,55 @@
     --orange-glow: 0 0 20px rgba(232, 123, 55, 0.4);
 }
 
+/* ── Phosphor Icons — Global Sizing ── */
+/* Phosphor icons are font-based, use font-size not width/height */
+[class^="ph-"], [class*=" ph-"] {
+    font-size: 1.25rem; /* default 20px equivalent */
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Footer contact icons — uniform 20px */
+.footer-contact a i,
+.footer-contact p i,
+.address-paragraph i {
+    font-size: 1.25rem !important;
+    color: var(--secondary);
+    flex-shrink: 0 !important;
+}
+
+/* Service card icons — larger */
+.service-card > [class^="ph-"],
+.service-card > [class*=" ph-"] {
+    font-size: 2.8rem !important;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+/* Nav social pill icons */
+.nav-pill a [class^="ph-"],
+.nav-pill a [class*=" ph-"] {
+    font-size: 1rem;
+}
+
+/* Trust badge icons */
+.trust-badge [class^="ph-"],
+.trust-badge [class*=" ph-"],
+.hero-trust-badges [class^="ph-"],
+.hero-trust-badges [class*=" ph-"] {
+    font-size: 0.95rem;
+}
+
+/* Floating contact button */
+#contact-toggle [class^="ph-"] {
+    font-size: 1.5rem;
+    color: white;
+}
+
+
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -1177,11 +1226,39 @@ footer {
 
 .footer-contact a i, 
 .footer-contact p i {
-    width: 16px;
-    height: 16px;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
     flex-shrink: 0;
     color: var(--secondary);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
+
+/* Target the SVG that Lucide renders inside the i tag */
+.footer-contact a i svg,
+.footer-contact p i svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+}
+
+.footer-brand .logo img {
+    height: 80px !important;
+    margin-bottom: 1.5rem !important;
+    transition: transform 0.3s ease;
+}
+
+.footer-brand .logo h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
 
 .footer-contact p {
     display: flex;
@@ -1198,6 +1275,77 @@ footer {
     font-size: 0.9rem;
     opacity: 0.5;
 }
+
+/* ── Floating Contact Button (Fixed Position) ── */
+.floating-contact {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+#contact-toggle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e87b37, #f97316);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(232, 123, 55, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(232, 123, 55, 0.6);
+}
+
+#contact-toggle i {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-options {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.contact-options.active {
+    display: flex;
+}
+
+.contact-options a {
+    background: white;
+    color: #1a1a2e;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.contact-options a:hover {
+    background: #e87b37;
+    color: white;
+    transform: translateX(-4px);
+}
+
 
 /* ── Service Card Enhancements ── */
 .service-footer {
@@ -1431,10 +1579,47 @@ footer {
 /* Page Headers for subpages */
 .page-header {
     padding-top: 220px !important;
-    padding-bottom: 4rem;
-    background: #f8f9fa;
+    padding-bottom: 6rem;
+    background: linear-gradient(135deg, #050c1a 0%, #08111e 100%);
+    position: relative;
+    overflow: hidden;
     text-align: center;
 }
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.07;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(232, 123, 55, 0.4), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.3), transparent 25%);
+    pointer-events: none;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: clamp(2.5rem, 6vw, 3.8rem) !important;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.page-header p {
+    font-size: 1.25rem !important;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.7;
+}
+
 
 /* === Mini Contact Form (Site-Wide) === */
 .mini-contact-section {

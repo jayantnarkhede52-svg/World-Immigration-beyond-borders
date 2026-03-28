@@ -26,18 +26,16 @@ function openMenu() {
     navLinks.classList.add('active');
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    const icon = mobileMenuBtn.querySelector('.lucide') || mobileMenuBtn.querySelector('i');
-    if (icon) icon.setAttribute('data-lucide', 'x');
-    lucide.createIcons();
+    const icon = mobileMenuBtn.querySelector('i');
+    if (icon) icon.className = 'ph-bold ph-x';
 }
 
 function closeMenu() {
     navLinks.classList.remove('active');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
-    const icon = mobileMenuBtn.querySelector('.lucide') || mobileMenuBtn.querySelector('i');
-    if (icon) icon.setAttribute('data-lucide', 'menu');
-    lucide.createIcons();
+    const icon = mobileMenuBtn.querySelector('i');
+    if (icon) icon.className = 'ph-bold ph-list';
 }
 
 if (mobileMenuBtn && navLinks) {
@@ -72,19 +70,17 @@ const contactOptions = document.querySelector('.contact-options');
 if (contactToggle) {
     contactToggle.addEventListener('click', () => {
         contactOptions.classList.toggle('active');
-        const icon = contactToggle.querySelector('.lucide') || contactToggle.querySelector('i');
+        const icon = contactToggle.querySelector('i');
         const isActive = contactOptions.classList.contains('active');
-        if (icon) icon.setAttribute('data-lucide', isActive ? 'x' : 'message-square');
-        lucide.createIcons();
+        if (icon) icon.className = isActive ? 'ph-bold ph-x' : 'ph-bold ph-chat-dots';
     });
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
         if (!contactToggle.closest('.floating-contact').contains(e.target)) {
             contactOptions.classList.remove('active');
-            const icon = contactToggle.querySelector('.lucide') || contactToggle.querySelector('i');
-            if (icon) icon.setAttribute('data-lucide', 'message-square');
-            lucide.createIcons();
+            const icon = contactToggle.querySelector('i');
+            if (icon) icon.className = 'ph-bold ph-chat-dots';
         }
     });
 }
@@ -217,8 +213,64 @@ function runAIAnalysis() {
         }
         
         if (message) message.textContent = reco;
-        lucide.createIcons();
     }, 2000);
+}
+
+// ── Testimonials Carousel ──
+const track = document.querySelector('.testimonial-track');
+const slides = Array.from(document.querySelectorAll('.testimonial-slide'));
+const dotsContainer = document.querySelector('.carousel-dots');
+let currentSlideIndex = 0;
+let carouselInterval;
+
+if (track && slides.length > 0) {
+    // Create dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = `dot ${i === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+
+    function goToSlide(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        currentSlideIndex = index;
+    }
+
+    function nextSlide() {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        goToSlide(currentSlideIndex);
+    }
+
+    function resetInterval() {
+        clearInterval(carouselInterval);
+        carouselInterval = setInterval(nextSlide, 5000);
+    }
+
+    resetInterval();
+}
+
+// ── Back to Top ──
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
 
 if (nextBtn) {
