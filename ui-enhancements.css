@@ -1953,3 +1953,68 @@ footer::before {
 #back-to-top:hover i {
   transform: translateY(-3px);
 }
+
+/* ============================================================
+   MOBILE OPTIMIZATION OVERRIDES (PORTED FROM MOBILE.CSS)
+   ============================================================ */
+@media (max-width: 768px) {
+  .header-logo {
+    height: 60px !important;
+    padding: 4px 8px !important;
+  }
+
+  .nav-pill {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.4rem, 6.5vw, 2.2rem) !important;
+    margin-bottom: 1.2rem !important;
+    text-align: center !important;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem !important;
+    text-align: center !important;
+    margin: 0 auto 2rem !important;
+  }
+
+  .hero-content {
+    padding-top: 10rem !important;
+    text-align: center !important;
+  }
+
+  .hero-stats-strip {
+    padding: 1rem !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .hero-stat strong {
+    font-size: 1.2rem !important;
+  }
+
+  .hero-stat span {
+    font-size: 0.6rem !important;
+  }
+
+  /* Compact Service Cards */
+  .service-card {
+    padding: 1.8rem 1.2rem !important;
+  }
+
+  .service-card i {
+    width: 42px !important;
+    height: 42px !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem !important;
+  }
+}
